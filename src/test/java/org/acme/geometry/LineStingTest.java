@@ -21,6 +21,12 @@ public class LineStingTest {
 	}
 	
 	@Test
+	public void testisEmpty() {
+		LineString g = new LineString();
+		Assert.assertEquals(true, g.isEmpty());
+	}
+	
+	@Test
 	public void testGetNumPoints() {
 		LineString oa = SampleFactory.createLineStringOA();
 		Assert.assertEquals(2, oa.getNumPoints());
@@ -41,10 +47,7 @@ public class LineStingTest {
 		} catch (AssertionError e) {
 			thrown = true;
 		}
-		Assert.assertTrue(
-				"Assertion attendue sur liste nulle",
-				thrown
-				);
+		Assert.assertTrue("Assertion attendue sur liste nulle",thrown);
 	}
 
 }
