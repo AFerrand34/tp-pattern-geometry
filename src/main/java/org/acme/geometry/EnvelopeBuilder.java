@@ -48,7 +48,7 @@ public class EnvelopeBuilder implements GeometryVisitor {
 	@Override
 	public void visit(LineString lineString) {
 		for(int i=0; i < lineString.getNumPoints(); i++) {
-			this.insert(lineString.getPointN(i).getCoordinate());
+			visit(lineString.getPointN(i));
 		}
 		
 	}
