@@ -36,5 +36,21 @@ public class LineString implements Geometry {
 		return TYPE;
 	}
 
+	@Override
+	public void translate(double dx, double dy) {
+		for (Point point : points) {
+			point.translate(dx, dy);
+		}
+	}
+
+	@Override
+	public LineString cloneGeom() {
+		List<Point> newPoints = new ArrayList<>(getNumPoints());
+		for (Point point : points) {
+			newPoints.add(point.cloneGeom());
+		}
+		return new LineString(newPoints);
+	}
+
 
 }
