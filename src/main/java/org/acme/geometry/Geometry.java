@@ -8,6 +8,8 @@ public interface Geometry {
 	
 	public void translate(double dx, double dy);
 	
-	public Geometry cloneGeom() ;
+	public Geometry cloneGeom();
+	
+	public Envelope getEnvelope();
 	
 }
