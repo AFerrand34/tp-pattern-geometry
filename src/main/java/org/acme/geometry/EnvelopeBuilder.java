@@ -1,6 +1,6 @@
 package org.acme.geometry;
 
-public class EnvelopeBuilder  {
+public class EnvelopeBuilder implements GeometryVisitor {
 	private Envelope boundingBox;
 	
 	
@@ -37,6 +37,20 @@ public class EnvelopeBuilder  {
 	
 	public Envelope build() {
 		return this.boundingBox;
+	}
+
+	@Override
+	public void visit(Point point) {
+		this.insert(point.getCoordinate());
+		
+	}
+
+	@Override
+	public void visit(LineString lineString) {
+		for(int i=0; i < lineString.getNumPoints(); i++) {
+			this.insert(lineString.getPointN(i).getCoordinate());
+		}
+		
 	}
 
 }
