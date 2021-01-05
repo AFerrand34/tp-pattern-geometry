@@ -20,14 +20,12 @@ public class Point implements Geometry{
 
 	@Override
 	public String getType() {
-		// TODO Auto-generated method stub
 		return TYPE;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.coordinate.isEmpty();
 	}
 
 	@Override

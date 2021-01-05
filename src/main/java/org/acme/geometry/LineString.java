@@ -27,7 +27,7 @@ public class LineString implements Geometry {
 	}
 	
 	public boolean isEmpty() {
-		return this.points.isEmpty();
+		return this.points.size() == 0;
 	}
 	
 	
