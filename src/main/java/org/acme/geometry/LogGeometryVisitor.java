@@ -11,13 +11,13 @@ public class LogGeometryVisitor implements GeometryVisitor{
 	}
 	
 	public void visit(Point point) {
-		this.out.print("I m a "+point.getType()+" with x="+
+		this.out.print("I am a "+point.getType()+" with x="+
 				Double.toString(point.getCoordinate().getX())+" and y="+
 				Double.toString(point.getCoordinate().getY()));
 	}
 	
 	public void visit(LineString lineString) {
-		this.out.print("I m a "+lineString.getType()+" defined by "+
+		this.out.print("I am a "+lineString.getType()+" and I am defined by "+
 				Integer.toString(lineString.getNumPoints())+" point(s)");
 	}
 }
