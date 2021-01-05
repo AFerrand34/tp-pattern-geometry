@@ -26,6 +26,6 @@ public class GeometryWithCachedEnvelopeTest {
 	public void testIsEmpty() {
 		Geometry g = SampleFactory.createPointA();
 		g = new GeometryWithCachedEnvelope(g);
-		Assert.assertTrue(g.isEmpty());
+		Assert.assertFalse(g.isEmpty());
 	}
 }
