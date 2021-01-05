@@ -1,10 +1,12 @@
 package org.acme.geometry;
 
 public class Coordinate {
-	private double x = 0.0;
-	private double y = 0.0;
+	private double x;
+	private double y;
 	
 	public Coordinate() {
+		this.x = Double.NaN;
+		this.y = Double.NaN;
 	}
 	
 	public Coordinate(double x, double y) {

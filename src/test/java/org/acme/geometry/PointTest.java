@@ -8,12 +8,19 @@ public class PointTest {
 	
 	public static final double EPSILON = 1.0e-15;
 	
-	@Test 
-	public void testDefaultConstructor() {
-		Point g = new Point();
-		Assert.assertNotNull(g.getCoordinate());
-		Assert.assertEquals(0.0, g.getCoordinate().getX(), EPSILON);
-		Assert.assertEquals(0.0, g.getCoordinate().getY(), EPSILON);
+	@Test
+	public void testDefaultConstructor(){
+		Point p = new Point();
+		Assert.assertTrue(p.isEmpty());
+		Assert.assertTrue(Double.isNaN(p.getCoordinate().getX()));
+		Assert.assertTrue(Double.isNaN(p.getCoordinate().getY()));
+	}
+	
+	@Test
+	public void testConstructor(){
+		Point p = SampleFactory.createPointA();
+		Assert.assertEquals(4.0, p.getCoordinate().getX(), EPSILON);
+		Assert.assertEquals(5.0, p.getCoordinate().getY(), EPSILON);
 	}
 	
 	@Test 
@@ -50,9 +57,9 @@ public class PointTest {
 	public void testGetEnveloppe() {
 		Point p = SampleFactory.createPointA();
 		Envelope e = p.getEnvelope();
-		Assert.assertEquals(0.0, e.getXmin(),EPSILON);
+		Assert.assertEquals(4.0, e.getXmin(),EPSILON);
 		Assert.assertEquals(4.0, e.getXmax(),EPSILON);
-		Assert.assertEquals(0.0, e.getYmin(),EPSILON);
+		Assert.assertEquals(5.0, e.getYmin(),EPSILON);
 		Assert.assertEquals(5.0, e.getYmax(),EPSILON);
 	}
 	

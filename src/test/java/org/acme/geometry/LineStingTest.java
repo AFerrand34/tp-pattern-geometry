@@ -10,11 +10,18 @@ public class LineStingTest {
 	
 	public static final double EPSILON = 1.0e-15;
 	
-	@Test 
-	public void testDefaultCOnstructor() {
-		Coordinate c = new Coordinate();
-		Assert.assertEquals(0.0, c.getX(), EPSILON);
-		Assert.assertEquals(0.0, c.getX(), EPSILON);
+	@Test
+	public void testDefaultConstructor(){
+		LineString l = new LineString();
+		Assert.assertEquals(0, l.getNumPoints());
+	}
+	
+	@Test
+	public void testConstructor(){
+		LineString l = SampleFactory.createLineStringOA();
+		Assert.assertEquals(2, l.getNumPoints());
+		Assert.assertEquals(0.0, l.getPointN(0).getCoordinate().getX(), EPSILON);
+		Assert.assertEquals(0.0, l.getPointN(0).getCoordinate().getY(), EPSILON);
 	}
 	
 	@Test
